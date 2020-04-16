@@ -26,14 +26,14 @@ def qtd_jogos_selecao(selecao):
 
 
 def qtd_jogos_part_name(part):
-    possivel = ''
+    possivel = []
     for jogo in info_jogos():
         if part in jogo['time_casa']:
             if jogo['time_casa'] not in possivel:
-                possivel = jogo['time_casa']
+                possivel.append(jogo['time_casa'])
         elif part in jogo['time_fora']:
             if jogo['time_fora'] not in possivel:
-                possivel = jogo['time_fora']
+                possivel.append(jogo['time_fora'])
     return possivel
 
 
@@ -137,7 +137,11 @@ def main_part_name():
     nome = input('Digite parte do nome da seleção: ')
     selecao = qtd_jogos_part_name(nome)
     for jogo in info_jogos():
-        if jogo['time_casa'] == selecao or jogo['time_fora'] == selecao: 
+        if jogo['time_casa'] in selecao:
+            print('Copa de',jogo['ano'])
+            print(jogo['time_casa'], jogo['time_casa_gols'], 'X', jogo['time_fora_gols'], jogo['time_fora'])
+            print('Data:',jogo['datahora'],'\n')
+        if jogo['time_fora'] in selecao: 
             print('Copa de',jogo['ano'])
             print(jogo['time_casa'], jogo['time_casa_gols'], 'X', jogo['time_fora_gols'], jogo['time_fora'])
             print('Data:',jogo['datahora'],'\n')
