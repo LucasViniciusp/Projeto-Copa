@@ -10,7 +10,7 @@ def times():
     return times
 
 def qtd_jogos(jogos):
-    qtd = len(jogos) - 1
+    qtd = len(jogos)
     return qtd
 
 def qtd_jogos_selecao(selecao):
