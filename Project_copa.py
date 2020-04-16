@@ -11,7 +11,7 @@ def times():
 
 
 def qtd_jogos(jogos):
-    qtd = len(jogos) - 1
+    qtd = len(jogos)
     return qtd
 
 
